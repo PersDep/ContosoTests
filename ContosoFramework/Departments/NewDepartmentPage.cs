@@ -10,8 +10,7 @@ namespace ContosoFramework
         {
             DepartmentsPage.GoTo();
 
-            var newDepartment = Driver.Instance.FindElement(By.LinkText("Create New"));
-            newDepartment.Click();
+            Driver.Instance.FindElement(By.LinkText("Create New")).Click();
         }
 
         public static CreateDepartmentCommand CreateDepartment(string name)

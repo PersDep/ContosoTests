@@ -22,12 +22,11 @@ namespace ContosoFramework
             }
         }
 
-
-        public static bool DoesDepartmentExistWithName(string name)
+        public static bool DoesDepartmentExistWithData(string data)
         {
             var bodyTag = Driver.Instance.FindElement(By.TagName("body"));
 
-            return bodyTag.Text.Contains(name);
+            return bodyTag.Text.Contains(data);
         }
     }
 }

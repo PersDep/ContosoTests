@@ -2,7 +2,6 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using OpenQA.Selenium;
 using ContosoFramework;
 
 namespace ContosoTests
@@ -15,27 +14,29 @@ namespace ContosoTests
         {
             DepartmentsPage.GoTo();
 
-            var bodyTag = Driver.Instance.FindElement(By.TagName("body"));
-            Console.WriteLine(bodyTag.Text);
-
             Assert.AreEqual(DepartmentsPage.Name, "Departments");
         }
 
         [TestMethod]
         public void Can_Create_Departmemt(string name = "")
         {
+            string format = @"yyyy-MM-dd";
+
             var departmentName = "Dep0";
             if (name.Length > 0)
                 departmentName = name;
+            var budget = 14;
+            var date = DateTime.Now;
+            var admin = "Admin";
 
             NewDepartmentPage.GoTo();
             NewDepartmentPage.CreateDepartment(departmentName)
-                .WithBudget(14)
-                .WithStartDate(DateTime.Now)
-                .WithAdministrator("Admin")
+                .WithBudget(budget)
+                .WithStartDate(date)
+                .WithAdministrator(admin)
                 .Create();
 
-            Assert.IsTrue(DepartmentsPage.DoesDepartmentExistWithName(departmentName));
+            Assert.IsTrue(DepartmentsPage.DoesDepartmentExistWithData(departmentName + ' ' + budget + ",00 ₽ " + date.ToString(format)));
         }
 
         [TestMethod]
@@ -54,6 +55,26 @@ namespace ContosoTests
             DeleteDepartmentsPage.DeleteDepartmentsCommand();
 
             Assert.IsFalse(DeleteDepartmentsPage.DoDepartmentsExist());
+        }
+
+        [TestMethod]
+        public void Can_Edit_Department()
+        {
+            string format = @"yyyy-MM-dd";
+
+            var name = "EditedDep";
+            var budget = 14;
+            var date = DateTime.Now;
+            var admin = "Admin";
+
+            EditDepartmentPage.GoTo();
+            EditDepartmentPage.EditDepartment(name)
+                .WithBudget(budget)
+                .WithStartDate(date)
+                .WithAdministrator(admin)
+                .Create();
+
+            Assert.IsTrue(DepartmentsPage.DoesDepartmentExistWithData(name + ' ' + budget + ",00 ₽ " + date.ToString(format)));
         }
     }
 }
