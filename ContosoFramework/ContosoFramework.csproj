@@ -49,6 +49,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Courses\EditCoursePage.cs" />
+    <Compile Include="Courses\FIlterCoursesPage.cs" />
+    <Compile Include="Courses\NewCoursePage.cs" />
     <Compile Include="DeleteElementsPage.cs" />
     <Compile Include="Instructors\EditInstructorPage.cs" />
     <Compile Include="Instructors\NewInstructorPage.cs" />

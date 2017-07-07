@@ -7,7 +7,7 @@ using ContosoFramework;
 namespace ContosoTests
 {
     [TestClass]
-    public class DepartmentTests : ContosoTest
+    public class DepartmentsTests : ContosoTests
     {
         [TestMethod]
         public void Can_Navigate_To_Departments()
@@ -55,6 +55,8 @@ namespace ContosoTests
             var date = DateTime.Now;
             var admin = "Admin";
 
+            NewDepartmentPage.GoTo();
+            NewDepartmentPage.CreateDepartmemt("TestDep", 16, date, "Ivan");
             EditDepartmentPage.GoTo();
             EditDepartmentPage.EditDepartment(name)
                 .WithBudget(budget)

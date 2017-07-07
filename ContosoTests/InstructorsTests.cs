@@ -7,7 +7,7 @@ using ContosoFramework;
 namespace ContosoTests
 {
     [TestClass]
-    public class InstructorsTests : ContosoTest
+    public class InstructorsTests : ContosoTests
     {
         [TestMethod]
         public void Can_Navigate_To_Instructors()
@@ -55,6 +55,8 @@ namespace ContosoTests
             var date = DateTime.Now;
             var location = "New Place";
 
+            NewInstructorPage.GoTo();
+            NewInstructorPage.CreateInstructor("TestInst", "John", date, "Place");
             EditInstructorPage.GoTo();
             EditInstructorPage.EditInstructor(name)
                     .WithName(FirstName)

@@ -6,7 +6,7 @@ namespace ContosoFramework
 {
     public class NewDepartmentPage
     {
-        private static void GoTo()
+        public static void GoTo()
         {
             Page.GoTo("/Department");
 

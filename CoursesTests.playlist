@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="ContosoTests.CoursesTests.Can_Navigate_To_Courses" /><Add Test="ContosoTests.CoursesTests.Can_Create_Courses" /><Add Test="ContosoTests.CoursesTests.Can_Delete_Courses" /><Add Test="ContosoTests.CoursesTests.Can_Edit_Course" /><Add Test="ContosoTests.CoursesTests.Can_Filter_Courses" /></Playlist>

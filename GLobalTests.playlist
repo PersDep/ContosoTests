@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="ContosoTests.GlobalTests.Can_Create_Courses_When_No_Departments" /><Add Test="ContosoTests.GlobalTests.Can_Create_Course_With_Existing_Number" /></Playlist>

@@ -6,7 +6,7 @@ namespace ContosoFramework
 {
     public class NewInstructorPage
     {
-        private static void GoTo()
+        public static void GoTo()
         {
             Page.GoTo("/Instructor");
 
@@ -56,6 +56,7 @@ namespace ContosoFramework
                 Driver.Instance.FindElement(By.Id("FirstMidName")).SendKeys(FirstName);
                 Driver.Instance.FindElement(By.Id("HireDate")).SendKeys(_startDate.ToString(format));
                 Driver.Instance.FindElement(By.Id("OfficeAssignment_Location")).SendKeys(_location);
+                //Driver.Instance.FindElement(By.Name("selectedCourses")).Click();
 
                 Driver.Instance.FindElement(By.XPath("//input[@value='Create']")).Click();
             }

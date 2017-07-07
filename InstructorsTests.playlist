@@ -1,1 +1,1 @@
-<Playlist Version="1.0"><Add Test="ContosoTests.InstructorsTests.Can_Navigate_To_Instructors" /><Add Test="ContosoTests.InstructorsTests.Can_Create_Instructors" /></Playlist>
+<Playlist Version="1.0"><Add Test="ContosoTests.InstructorsTests.Can_Navigate_To_Instructors" /><Add Test="ContosoTests.InstructorsTests.Can_Create_Instructors" /><Add Test="ContosoTests.InstructorsTests.Can_Delete_Instructors" /><Add Test="ContosoTests.InstructorsTests.Can_Edit_Instructor" /></Playlist>

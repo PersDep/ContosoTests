@@ -5,7 +5,7 @@ using ContosoFramework;
 namespace ContosoTests
 {
     [TestClass]
-    public class ContosoTest
+    public class ContosoTests
     {
         [TestInitialize]
         public void Init()
