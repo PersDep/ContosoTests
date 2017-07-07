@@ -4,11 +4,11 @@ using OpenQA.Selenium;
 
 namespace ContosoFramework
 {
-    public class DepartmentsPage
+    public class Page
     {
-        public static void GoTo()
+        public static void GoTo(string name)
         {
-            Driver.Instance.Navigate().GoToUrl("http://" + Driver.BaseAddress + "/Department");
+            Driver.Instance.Navigate().GoToUrl("http://" + Driver.BaseAddress + name);
         }
 
         public static string Name
@@ -22,7 +22,7 @@ namespace ContosoFramework
             }
         }
 
-        public static bool DoesDepartmentExistWithData(string data)
+        public static bool DoesElementExistWithData(string data)
         {
             var bodyTag = Driver.Instance.FindElement(By.TagName("body"));
 

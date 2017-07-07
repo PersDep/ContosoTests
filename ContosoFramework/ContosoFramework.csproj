@@ -49,8 +49,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Departments\DeleteDepartmentsPage.cs" />
-    <Compile Include="Departments\DepartmentsPage.cs" />
+    <Compile Include="DeleteElementsPage.cs" />
+    <Compile Include="Instructors\EditInstructorPage.cs" />
+    <Compile Include="Instructors\NewInstructorPage.cs" />
+    <Compile Include="Page.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Departments\EditDepartmentPage.cs" />
     <Compile Include="Departments\NewDepartmentPage.cs" />

@@ -8,7 +8,7 @@ namespace ContosoFramework
     {
         public static void GoTo()
         {
-            DepartmentsPage.GoTo();
+            Page.GoTo("/Department");
 
             Driver.Instance.FindElement(By.LinkText("Edit")).Click();
         }

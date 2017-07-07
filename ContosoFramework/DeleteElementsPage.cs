@@ -2,14 +2,14 @@
 
 namespace ContosoFramework
 {
-    public class DeleteDepartmentsPage
+    public class DeleteElementsPage
     {
-        public static void GoTo()
+        public static void GoTo(string name)
         {
-            DepartmentsPage.GoTo();
+            Page.GoTo(name);
         }
 
-        public static void DeleteDepartmentsCommand()
+        public static void DeleteElementsCommand()
         {
             while (true)
             {
@@ -24,7 +24,8 @@ namespace ContosoFramework
                 }
             }
         }
-        public static bool DoDepartmentsExist()
+        
+        public static bool DoElementsExist()
         {
             var bodyTag = Driver.Instance.FindElement(By.TagName("body"));
 

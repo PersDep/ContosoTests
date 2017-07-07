@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="ContosoTests.DepartmentTests.Can_Navigate_To_Departments" /><Add Test="ContosoTests.DepartmentTests.Can_Delete_Departments" /><Add Test="ContosoTests.DepartmentTests.Can_Create_Departments" /><Add Test="ContosoTests.DepartmentTests.Can_Edit_Department" /></Playlist>

@@ -6,19 +6,19 @@ namespace ContosoFramework
 {
     public class NewDepartmentPage
     {
-        public static void GoTo()
+        private static void GoTo()
         {
-            DepartmentsPage.GoTo();
+            Page.GoTo("/Department");
 
             Driver.Instance.FindElement(By.LinkText("Create New")).Click();
         }
 
-        public static CreateDepartmentCommand CreateDepartment(string name)
+        private static CreateDepartmentCommand CreateDepartment(string name)
         {
             return new CreateDepartmentCommand(name);
         }
 
-        public class CreateDepartmentCommand
+        private class CreateDepartmentCommand
         {
             private readonly string _name;
             private decimal _budget;
@@ -59,6 +59,16 @@ namespace ContosoFramework
 
                 Driver.Instance.FindElement(By.XPath("//input[@value='Create']")).Click();
             }
+        }
+
+        public static void CreateDepartmemt(string name, decimal budget, DateTime date, string admin)
+        {
+            GoTo();
+            CreateDepartment(name)
+                .WithBudget(budget)
+                .WithStartDate(date)
+                .WithAdministrator(admin)
+                .Create();
         }
     }
 }

@@ -12,49 +12,37 @@ namespace ContosoTests
         [TestMethod]
         public void Can_Navigate_To_Departments()
         {
-            DepartmentsPage.GoTo();
+            Page.GoTo("/Department");
 
-            Assert.AreEqual(DepartmentsPage.Name, "Departments");
-        }
-
-        [TestMethod]
-        public void Can_Create_Departmemt(string name = "")
-        {
-            string format = @"yyyy-MM-dd";
-
-            var departmentName = "Dep0";
-            if (name.Length > 0)
-                departmentName = name;
-            var budget = 14;
-            var date = DateTime.Now;
-            var admin = "Admin";
-
-            NewDepartmentPage.GoTo();
-            NewDepartmentPage.CreateDepartment(departmentName)
-                .WithBudget(budget)
-                .WithStartDate(date)
-                .WithAdministrator(admin)
-                .Create();
-
-            Assert.IsTrue(DepartmentsPage.DoesDepartmentExistWithData(departmentName + ' ' + budget + ",00 ₽ " + date.ToString(format)));
+            Assert.AreEqual(Page.Name, "Departments");
         }
 
         [TestMethod]
         public void Can_Create_Departments()
         {
+            string format = @"yyyy-MM-dd";
+
+            var budget = 14;
+            var date = DateTime.Now;
+            var admin = "Admin";
+
             var DepsToCreate = 5;
 
             for (int i = 0; i < DepsToCreate; i++)
-                Can_Create_Departmemt("Dep" + i);
+            {
+                var name = "Dep" + i;
+                NewDepartmentPage.CreateDepartmemt(name, budget, date, admin);
+                Assert.IsTrue(Page.DoesElementExistWithData(name + ' ' + budget + ",00 ₽ " + date.ToString(format)));
+            }
         }
 
         [TestMethod]
         public void Can_Delete_Departments()
         {
-            DeleteDepartmentsPage.GoTo();
-            DeleteDepartmentsPage.DeleteDepartmentsCommand();
-
-            Assert.IsFalse(DeleteDepartmentsPage.DoDepartmentsExist());
+            DeleteElementsPage.GoTo("/Department");
+            DeleteElementsPage.DeleteElementsCommand();
+            
+            Assert.IsFalse(DeleteElementsPage.DoElementsExist());
         }
 
         [TestMethod]
@@ -74,7 +62,7 @@ namespace ContosoTests
                 .WithAdministrator(admin)
                 .Create();
 
-            Assert.IsTrue(DepartmentsPage.DoesDepartmentExistWithData(name + ' ' + budget + ",00 ₽ " + date.ToString(format)));
+            Assert.IsTrue(Page.DoesElementExistWithData(name + ' ' + budget + ",00 ₽ " + date.ToString(format)));
         }
     }
 }

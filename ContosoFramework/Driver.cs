@@ -24,25 +24,21 @@ namespace ContosoFramework
             }
         }
 
-
         public static void Initialize()
         {
             Instance = new InternetExplorerDriver();
             TurnOnWait();
         }
 
-
         public static void Close()
         {
             Instance.Close();
         }
 
-
         public static void Wait(TimeSpan timeSpan)
         {
             Thread.Sleep((int)(timeSpan.TotalSeconds * 1000));
         }
-
 
         public static void NoWait(Action action)
         {
@@ -51,12 +47,10 @@ namespace ContosoFramework
             TurnOnWait();
         }
 
-
         private static void TurnOnWait()
         {
             Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
         }
-
 
         private static void TurnOffWait()
         {
