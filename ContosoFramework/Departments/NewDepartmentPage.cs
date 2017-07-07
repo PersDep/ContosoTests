@@ -61,7 +61,7 @@ namespace ContosoFramework
             }
         }
 
-        public static void CreateDepartmemt(string name, decimal budget, DateTime date, string admin)
+        public static void CreateDepartment(string name, decimal budget, DateTime date, string admin)
         {
             GoTo();
             CreateDepartment(name)

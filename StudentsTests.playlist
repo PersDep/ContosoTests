@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="ContosoTests.StudentsTests.Can_Navigate_To_Students" /><Add Test="ContosoTests.StudentsTests.Can_Create_Students" /><Add Test="ContosoTests.StudentsTests.Can_Delete_Students" /><Add Test="ContosoTests.StudentsTests.Can_Edit_Student" /><Add Test="ContosoTests.StudentsTests.Can_Find_Students" /></Playlist>

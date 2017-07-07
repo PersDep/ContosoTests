@@ -24,14 +24,14 @@ namespace ContosoTests
 
             var budget = 14;
             var date = DateTime.Now;
-            var admin = "Admin";
 
             var DepsToCreate = 5;
 
             for (int i = 0; i < DepsToCreate; i++)
             {
                 var name = "Dep" + i;
-                NewDepartmentPage.CreateDepartmemt(name, budget, date, admin);
+                var admin = "Inst" + i;
+                NewDepartmentPage.CreateDepartment(name, budget, date, admin);
                 Assert.IsTrue(Page.DoesElementExistWithData(name + ' ' + budget + ",00 ₽ " + date.ToString(format)));
             }
         }
@@ -53,10 +53,10 @@ namespace ContosoTests
             var name = "EditedDep";
             var budget = 14;
             var date = DateTime.Now;
-            var admin = "Admin";
+            var admin = "Inst4";
 
             NewDepartmentPage.GoTo();
-            NewDepartmentPage.CreateDepartmemt("TestDep", 16, date, "Ivan");
+            NewDepartmentPage.CreateDepartment("TestDep", 16, date, "Ivan");
             EditDepartmentPage.GoTo();
             EditDepartmentPage.EditDepartment(name)
                 .WithBudget(budget)

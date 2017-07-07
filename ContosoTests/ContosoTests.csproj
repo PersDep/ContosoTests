@@ -67,6 +67,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CoursesTests.cs" />
     <Compile Include="GlobalTests.cs" />
+    <Compile Include="StudentsTests.cs" />
+    <Compile Include="AboutTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContosoFramework\ContosoFramework.csproj">
